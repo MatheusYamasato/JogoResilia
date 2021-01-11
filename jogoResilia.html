@@ -1,94 +1,32 @@
-<meta charset="UTF-8">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApocalipseNation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<script>
+    <header class="header-content">
+        <form class="radio-button">
+            <label for=""><input name="background" id="tocaMusica" type="radio"> Com Musica</label>
+            <label for=""><input name="background" id="pararMusica" type="radio">Sem musica</label>
+            <audio id="musica" src="./audio/musicaWarsong.mp3"></audio>
+        </form>
+        <div>
+        <h1>ApocalipseNation</h1>
+        </div>
 
-    function gameOver() {
-        alert("GAME OVER! Você perdeu!");
-        alert("Aperte em OK para voltar ao início");
-        iniciarJogo();
-    }
+    </header>
 
-    function voceGanhou() {
-        alert("FIM DE JOGO! Você ganhou e está vivo!");
-        alert("Aperte em Ok para voltar a jogar novamente");
-        iniciarJogo();
-    }
-    
-    var nomeJogador = "";   
-    iniciarJogo();
-    
-    function iniciarJogo() {
-        nomeJogador = prompt("Jogador, para começar, informe seu nome:");
-        alert(`${nomeJogador}, estamos num apocalipse, tudo de ruim está acontecendo, e você precisará tomar algumas
-decisões, que levarão você a morte ou continuará vivendo!`);
-    alert(`Você está na sua casa, sem notícias de familiares e amigos, pois não há mais internet e serviços de telefonia.`);
-    var decisaoSair = parseInt(prompt(`Se encontrando nesse cenário
-1-Vai atrás de familia ou amigos?
-2-Vai atrás de suprimentos para aonde você mora?
-Digite o número da opção`));
+    <main>
+    <div id="containerInit" class="menuInicio">
+        <button class="btn-class" id="btn-id">Iniciar Jogo</button>
+    </div>
+    <div class="campoButton" id="campoButton"></div>
+    </main>
 
-    if(decisaoSair == 1) {
-        alert(`Você foi até seu familiar/amigo e encontra a casa aberta, e na parte térrea não há ninguém`)
-        var subirEscadas = parseInt(prompt(`O que você faz?
-1-Decide subir as escadas
-2-Decide sair da casa e vai embora`))
-    } 
-    if(decisaoSair == 2) {
-        alert(`Você vai até um supermercado mais próximo para pegar alguns suprimentos, o mercado está sendo saqueado por todos.`)
-        var decisaoMercado = parseInt(prompt(`Você está no corredor de bebidas. As águas estão acabando, quando você vai pegar um galão de agua
-vem um cara e pede que você ajude a levar um galão de agua para ele, pois não tem força para levar a sua familia no carro. Você:
-1-Ajuda ele e leva agua até o carro dele.
-2-Diz que não e segue no mercado.`));
-    }
-
-    if(decisaoMercado == 1) {
-        alert("Você ajudou ele, ele é um agente da Interpol, e tem um local na praia que está totalmente seguro e ele te levará até lá!")
-        voceGanhou();
-    } else if (decisaoMercado == 2) {
-        alert("Você decide não ajuda ele e com isso, quando você está saindo do mercado com suas coisas, vem uma pessoa malfeitora e te apanha por trás e te dá uma facada no peito");
-        gameOver();
-
-    }
-
-    if (subirEscadas == 1) {
-        alert("Eram ladrões que estavam em cima e todos os moradores estão morto! E o ladrão atira bem em sua cabeça e você MORREU!")
-        gameOver();
-    } else if (subirEscadas == 2){
-        alert(`Você saiu da casa e encontra um grupo de pessoas, que está tentando reunir mais pessoas, que segundo o líder, é um lugar seguro
-para entrar pro grupo e você é escolhido.`)
-        var decisaoGrupo  = parseInt(prompt(`O pessoal do exército te obriga a entrar no tanque e você:
-1-Aceita numa boa e vai ajudar!
-2-Se recusa, e volta para casa`));
-    }
-    
-    if (decisaoGrupo == 1) {
-        alert(`Você faz parte do grupo agora! E vocês possuem varios carros, todos estão dentro de carros, rumo ao lugar seguro, que segundo o lider, é um clube
-que fica no centro da cidade!`)
-        alert(`Vocês conseguem chegar no clube e lá, conseguiram fazer um lugar SUPER secreto que há segurança e o CAOS, não chegou! Voce viverá lá e tem tudo que você precise até o CAOS no resto do mundo acabar`);
-        voceGanhou();
-
-    } else if(decisaoGrupo == 2) {
-        alert(`Já que não achou a pessoa que queria encontrar, acha melhor voltar para a casa`);
-        var decisaoAmigo = parseInt(prompt(`Você chega em casa e de repente, um de seus amigos convida a você a sair e fugir dali. Você:
-1-Você vai com ele e foge dali.
-2-Você fica na sua própria casa.`));
-    }
-
-    if (decisaoAmigo == 1) {
-        alert(`${nomeJogador} você fugiu com seu amigo mas foram atropeladores ao sairem de casa!`);
-        gameOver();
-    } else if(decisaoAmigo == 2) {
-        alert(`${nomeJogador} você preferiu ficar em casa e esperou por ajuda! Seu primo, que é agente de segurança de seu país, vai até sua casa e te leva para um lugar seguro!`)
-        voceGanhou();
-    }
-}
-
-    
-
-    
-
-</script>
+    <script src="scripts.js"></script>
+</body>
+</html>
