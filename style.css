@@ -72,3 +72,22 @@ button {
     flex-direction: column;
     align-items: center;
 }
+
+@media screen and (min-width: 267px) and (max-width:768px) {
+    
+    .body {
+        height: 100vh;
+    }
+
+    .mensagem {
+        color: black;
+    }
+
+    body {
+        background-image: none;
+    }
+
+    .img-vencedor, .img-perdedor {
+        background-image: none;
+    }
+}

@@ -1,13 +1,14 @@
 // declarando o campo de jogo selecionando a div
 let campoJogo = document.getElementById("containerInit");
-let main = document.querySelector("main");
-let campoBotao = document.getElementById("campoButton");
-let botaoIniciar = document.getElementById("btn-id");
-botaoIniciar.addEventListener("click", iniciarJogo);
+let main = document.querySelector("main"); // declarando a main
+let campoBotao = document.getElementById("campoButton"); // declarando o campo do botão
+let botaoIniciar = document.getElementById("btn-id"); // pegando o botao iniciar
+botaoIniciar.addEventListener("click", iniciarJogo); // ao clicar no botão iniciar, chamar o jogo
 
 let tocarMusica = document.getElementById("tocaMusica");
 let pararMusica = document.getElementById("pararMusica");
 
+// habilitando a música
 function habilitarMusica() {
     tocarMusica.addEventListener("click", () => {
     let audio = document.querySelector("audio");
@@ -26,10 +27,6 @@ function desabilitarMusica() {
 habilitarMusica();
 desabilitarMusica();
 
-
-
-
-
 function iniciarJogo() {
     clearGame();
     showMessage(`Estamos num apocalipse, tudo de ruim está acontecendo, e você precisará tomar algumas decisões,
@@ -47,7 +44,6 @@ function faseUm() {
     `
     campoBotao.append(btn);
 }
-
 
 function faseDois() {
     clearGame();
@@ -76,7 +72,6 @@ function sairDaCasa() {
     <button onclick="irComGrupo()">Você confia no projeto e vai junto com esse grupo revolucionista!</button>
     `
     campoBotao.append(btn)
-    
 }
 
 function faseTres() {
